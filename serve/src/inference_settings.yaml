@@ -1,0 +1,5 @@
+class_names: [] # e.g. ["car", "person"]
+conf: 0.25 # # bounding box confidence threshold
+iou: 0.7 # intersection over union (IoU) threshold for NMS (no effect for YOLOv10 models)
+max_det: 300 # maximum number of detections per image
+agnostic_nms: False # (bool) whether to use class-agnostic NMS or not
