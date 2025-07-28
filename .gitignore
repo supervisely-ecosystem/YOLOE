@@ -1,3 +1,4 @@
 supervisely.env
 local.env
 app_data/
+**/__pycache__/
