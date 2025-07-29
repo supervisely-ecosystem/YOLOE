@@ -1,6 +1,3 @@
-from ultralytics.nn.text_model import build_text_model
-
-build_text_model("mobileclip:blt")
 import supervisely as sly
 from serve.src.yoloe_model import YOLOEModel
 from dotenv import load_dotenv
