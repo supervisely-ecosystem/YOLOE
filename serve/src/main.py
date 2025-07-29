@@ -1,16 +1,7 @@
+from ultralytics.nn.text_model import build_text_model
+
+build_text_model("mobileclip:blt")
 import supervisely as sly
-
-sly.logger.info("Downloading mobileclip...")
-
-import subprocess
-
-subprocess.run(
-    [
-        "wget",
-        "https://github.com/ultralytics/assets/releases/download/v8.3.0/mobileclip_blt.ts",
-    ],
-    check=True,
-)
 from serve.src.yoloe_model import YOLOEModel
 from dotenv import load_dotenv
 
