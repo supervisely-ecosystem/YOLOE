@@ -30,7 +30,7 @@ YOLOE retains the standard YOLO structure —a convolutional backbone (e.g., CSP
 
 - Semantic-Activated Visual Prompt Encoder (SAVPE): Enables visual-prompted detection via a lightweight embedding branch. Given a reference image, SAVPE encodes semantic and activation features, conditioning the model to detect visually similar objects—a one-shot detection capability useful for logos or specific parts.
 
-Lazy Region-Prompt Contrast (LRPC): In prompt-free mode, YOLOE performs open-set recognition using internal embeddings trained on large vocabularies (1200+ categories from LVIS and Objects365). Without external prompts or encoders, YOLOE identifies objects via embedding similarity lookup, efficiently handling large label spaces at inference.
+- Lazy Region-Prompt Contrast (LRPC): In prompt-free mode, YOLOE performs open-set recognition using internal embeddings trained on large vocabularies (1200+ categories from LVIS and Objects365). Without external prompts or encoders, YOLOE identifies objects via embedding similarity lookup, efficiently handling large label spaces at inference.
 
 # How To Run
 

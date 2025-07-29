@@ -13,4 +13,5 @@ model = YOLOEModel(
     use_gui=True,
     use_serving_gui_template=True,
 )
+model.gui.pretrained_models_table.set_active_row(2)
 model.serve()
