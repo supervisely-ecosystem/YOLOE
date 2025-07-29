@@ -24,4 +24,4 @@ RUN apt-get install nano
 RUN pip3 install ruamel.yaml==0.17.21
 RUN pip3 install git+https://github.com/openai/CLIP.git
 
-LABEL "role"="development"
+LABEL python_sdk_version=6.73.404

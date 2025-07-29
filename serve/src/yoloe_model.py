@@ -8,6 +8,7 @@ import numpy as np
 from typing import List
 import cv2
 from supervisely.nn.prediction_dto import PredictionBBox
+from ultralytics.models.yolo.yoloe import YOLOEVPSegPredictor
 
 
 class YOLOEModel(sly.nn.inference.PromptBasedObjectDetection):
@@ -30,47 +31,92 @@ class YOLOEModel(sly.nn.inference.PromptBasedObjectDetection):
         device: str,
         runtime: str,
     ):
-        checkpoint_path = model_files["weights_url"]
+        self.checkpoint_path = model_files["weights_url"]
         self.device = device
-        self.model = YOLOE(checkpoint_path)
+        self.model = YOLOE(self.checkpoint_path)
         self.model.to(self.device)
-        self.prompt_type = model_info["prompt"]
+        self.model_type = model_info["prompt"]
 
         if model_source == ModelSource.PRETRAINED:
             self.checkpoint_info = CheckpointInfo(
-                checkpoint_name=os.path.basename(checkpoint_path),
+                checkpoint_name=os.path.basename(self.checkpoint_path),
                 model_name=model_info["meta"]["model_name"],
                 architecture=self.FRAMEWORK_NAME,
                 checkpoint_url=model_info["meta"]["model_files"]["weights_url"],
                 model_source=model_source,
             )
 
-        self.classes = ["object"]
+        if self.model_type == "text/visual":
+            self.classes = ["object"]
+        else:
+            self.classes = list(self.model.names.values())
         obj_classes = [sly.ObjClass(name, sly.Rectangle) for name in self.classes]
         conf_tag = sly.TagMeta("confidence", sly.TagValueType.ANY_NUMBER)
         self._model_meta = sly.ProjectMeta(
             obj_classes=obj_classes, tag_metas=[conf_tag]
         )
+        self.reference_image_id = None
+        self.reference_image = None
 
     def predict_benchmark(self, images_np: List[np.ndarray], settings: dict = None):
         if self.runtime == RuntimeType.PYTORCH:
             return self._predict_pytorch(images_np, settings)
 
     def _predict_pytorch(self, images_np: List[np.ndarray], settings: dict = None):
+        # have to reinitialize model every time because of bug
+        if not hasattr(self, "model"):
+            self.model = YOLOE(self.checkpoint_path)
+            self.model.to(self.device)
+
         # RGB to BGR
         images_np = [cv2.cvtColor(img, cv2.COLOR_RGB2BGR) for img in images_np]
         # prepare prompt
-        if self.prompt_type == "text/visual":
-            class_names = settings["class_names"]
-            self.model.set_classes(class_names, self.model.get_text_pe(class_names))
+        if self.model_type == "text/visual":
+            mode = settings["mode"]
+            if mode == "text":
+                class_names = settings["class_names"]
+                self.classes = class_names
+                self.model.set_classes(class_names, self.model.get_text_pe(class_names))
+                predictions = self.model(
+                    source=images_np,
+                    conf=settings["conf"],
+                )
+            elif mode == "reference_image":
+                reference_image_id = settings["reference_image_id"]
+                if reference_image_id != self.reference_image_id:
+                    self.reference_image = self._api.image.download_np(
+                        reference_image_id
+                    )
+                    self.reference_image_id = reference_image_id
+                class_names = [settings["reference_class_name"]]
+                self.classes = class_names
+                reference_bbox = settings["reference_bbox"]
+                visual_prompts = dict(
+                    bboxes=np.array(
+                        [
+                            [
+                                reference_bbox[1],
+                                reference_bbox[0],
+                                reference_bbox[3],
+                                reference_bbox[2],
+                            ]
+                        ],
+                        dtype=np.float64,
+                    ),
+                    cls=np.array([0], dtype=np.int32),
+                )
+                predictions = self.model.predict(
+                    images_np,
+                    refer_image=self.reference_image,
+                    visual_prompts=visual_prompts,
+                    predictor=YOLOEVPSegPredictor,
+                )
 
-        predictions = self.model(
-            source=images_np,
-            conf=settings["conf"],
-            iou=settings["iou"],
-            device=self.model.device,
-            agnostic_nms=settings["agnostic_nms"],
-        )
+        else:
+            predictions = self.model(
+                source=images_np,
+                conf=settings["conf"],
+            )
         n = len(predictions)
         first_benchmark = predictions[0].speed
         # YOLO returns avg time per image, so we need to multiply it by the number of images
@@ -85,6 +131,12 @@ class YOLOEModel(sly.nn.inference.PromptBasedObjectDetection):
             ]
         to_dto_time = timer.get_time()
         benchmark["postprocess"] += to_dto_time
+
+        # have to delete model because of bug
+        del self.model
+        torch.cuda.empty_cache()
+        torch.cuda.ipc_collect()
+
         return predictions, benchmark
 
     def _load_model_headless(

@@ -25,6 +25,13 @@
                 "DEBUG_WITH_SLY_NET": "1",
                 "APP_NAME": "Serve YOLOE"
             }
-        }
+        },
+        {
+            "name": "Test debug",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "test.py",
+            "justMyCode": false
+        },
     ]
 }
