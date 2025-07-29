@@ -24,8 +24,4 @@ RUN apt-get install nano
 RUN pip3 install ruamel.yaml==0.17.21
 RUN pip3 install git+https://github.com/openai/CLIP.git
 
-COPY download_mobileclip.py /app/download_mobileclip.py
-WORKDIR /app
-RUN python3 download_mobileclip.py
-
 LABEL python_sdk_version=6.73.404

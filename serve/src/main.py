@@ -1,3 +1,6 @@
+from ultralytics.utils.downloads import attempt_download_asset
+
+attempt_download_asset("mobileclip_blt.ts")
 import supervisely as sly
 from serve.src.yoloe_model import YOLOEModel
 from dotenv import load_dotenv
