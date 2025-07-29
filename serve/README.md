@@ -48,7 +48,7 @@ Lazy Region-Prompt Contrast (LRPC): In prompt-free mode, YOLOE performs open-set
 
 Select one of text/visual prompt models from the table:
 
-![text_visual_models](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_text_visual.png)
+![visual_models](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_text_visual.png)
 
 Run NN Image Labeling app, open image which you want to use as reference, create reference boudning box, select it - you will see that option "Apply model to ROI" appeared and settings in corresponding fiels have changed automatically:
 
@@ -66,7 +66,7 @@ Now open target image and click  on "Apply model to image":
 
 Select one of text/visual prompt models from the table:
 
-[text_visual_models](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_text_visual.png)
+![text_models](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_text_visual.png)
 
 Run [NN Image Labeling](https://ecosystem.supervisely.com/apps/nn-image-labeling/annotation-tool) app, define class names and click  on "Apply model to image":
 
@@ -78,7 +78,7 @@ Run [NN Image Labeling](https://ecosystem.supervisely.com/apps/nn-image-labeling
 
 Select one of prompt-free models from the table:
 
-[text_visual_models](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_prompt_free.png)
+![prompt_free_models](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_prompt_free.png)
 
 Run NN Image Labeling app, setup confidence threshold and click  on "Apply model to image":
 
