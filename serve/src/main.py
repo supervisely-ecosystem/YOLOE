@@ -1,3 +1,11 @@
+import subprocess
+
+subprocess.run(
+    [
+        "wget",
+        "https://github.com/ultralytics/assets/releases/download/v8.3.0/mobileclip_blt.ts",
+    ]
+)
 import supervisely as sly
 from serve.src.yoloe_model import YOLOEModel
 from dotenv import load_dotenv
