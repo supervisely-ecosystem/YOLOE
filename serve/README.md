@@ -6,6 +6,7 @@
 <p align="center">
   <a href="#Overview">Overview</a> •
   <a href="#How-To-Run">How To Run</a> •
+  <a href="#How-To-Use">How To Run</a> •
   <a href="#Acknowledgment">Acknowledgment</a>
 </p>
 
@@ -40,6 +41,76 @@ Lazy Region-Prompt Contrast (LRPC): In prompt-free mode, YOLOE performs open-set
 **Step 2.** Wait for the model to deploy
 
 ![deployed](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_serve_1.png)
+
+# How To Use
+
+**Visual prompt inference**
+
+Select one of text/visual prompt models from the table:
+
+![text_visual_models](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_text_visual.png)
+
+Run NN Image Labeling app, open image which you want to use as reference, create reference boudning box, select it - you will see that option "Apply model to ROI" appeared and settings in corresponding fiels have changed automatically:
+
+<video width="100%" preload="auto" autoplay muted loop>
+    <source src="https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_ref_img_0.mp4" type="video/mp4">
+</video>
+
+Now open target image and click  on "Apply model to image":
+
+<video width="100%" preload="auto" autoplay muted loop>
+    <source src="https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_ref_img_1.mp4" type="video/mp4">
+</video>
+
+**Text prompt inference**
+
+Select one of text/visual prompt models from the table:
+
+[text_visual_models](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_text_visual.png)
+
+Run [NN Image Labeling](https://ecosystem.supervisely.com/apps/nn-image-labeling/annotation-tool) app, define class names and click  on "Apply model to image":
+
+<video width="100%" preload="auto" autoplay muted loop>
+    <source src="https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_class_names.mp4" type="video/mp4">
+</video>
+
+**Prompt-free inference**
+
+Select one of prompt-free models from the table:
+
+[text_visual_models](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_prompt_free.png)
+
+Run NN Image Labeling app, setup confidence threshold and click  on "Apply model to image":
+
+<video width="100%" preload="auto" autoplay muted loop>
+    <source src="https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_prompt_free.mp4" type="video/mp4">
+</video>
+
+**Apply model to images project**
+
+Run [Apply NN to Images Project](https://ecosystem.supervisely.com/apps/nn-image-labeling/project-dataset) app and select input project:
+
+![apply_yoloe_0](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_apply_0.png)
+
+Connect to deployed YOLOE model:
+
+![apply_yoloe_1](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_apply_1.png)
+
+Leave "Choose classes and tags" section as default:
+
+![apply_yoloe_2](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_apply_2.png)
+
+Set up inference settings:
+
+![apply_yoloe_3](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_apply_3.png)
+
+Preview model performance on random image from dataset:
+
+![apply_yoloe_4](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_apply_4.png)
+
+Press "Apply model to input data":
+
+![apply_yoloe_5](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_apply_5.png)
 
 # Acknowledgment
 
