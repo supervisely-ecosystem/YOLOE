@@ -35,6 +35,7 @@ class YOLOEModel(sly.nn.inference.PromptBasedObjectDetection):
         self.device = device
         self.model = YOLOE(self.checkpoint_path)
         self.model.to(self.device)
+        self.model.model.is_fused = lambda: True
         self.model_type = model_info["prompt"]
 
         if model_source == ModelSource.PRETRAINED:
@@ -63,11 +64,6 @@ class YOLOEModel(sly.nn.inference.PromptBasedObjectDetection):
             return self._predict_pytorch(images_np, settings)
 
     def _predict_pytorch(self, images_np: List[np.ndarray], settings: dict = None):
-        # have to reinitialize model every time because of bug
-        if not hasattr(self, "model"):
-            self.model = YOLOE(self.checkpoint_path)
-            self.model.to(self.device)
-
         # RGB to BGR
         images_np = [cv2.cvtColor(img, cv2.COLOR_RGB2BGR) for img in images_np]
         # prepare prompt
@@ -131,12 +127,6 @@ class YOLOEModel(sly.nn.inference.PromptBasedObjectDetection):
             ]
         to_dto_time = timer.get_time()
         benchmark["postprocess"] += to_dto_time
-
-        # have to delete model because of bug
-        del self.model
-        torch.cuda.empty_cache()
-        torch.cuda.ipc_collect()
-
         return predictions, benchmark
 
     def _load_model_headless(
