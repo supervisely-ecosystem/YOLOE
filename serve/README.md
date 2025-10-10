@@ -10,7 +10,7 @@
   <a href="#Acknowledgment">Acknowledgment</a>
 </p>
 
-[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervisely.com/apps/supervisely-ecosystem/YOLOE/serve)
+[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](../../../../supervisely-ecosystem/YOLOE/serve)
 [![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervisely.com/slack)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/YOLOE)
 [![views](https://app.supervisely.com/img/badges/views/supervisely-ecosystem/YOLOE/serve.png)](https://supervisely.com)
@@ -68,7 +68,7 @@ Select one of text/visual prompt models from the table:
 
 ![text_models](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_text_visual.png)
 
-Run [NN Image Labeling](https://ecosystem.supervisely.com/apps/nn-image-labeling/annotation-tool) app, define class names and click  on "Apply model to image":
+Run [NN Image Labeling](../../../../supervisely-ecosystem/nn-image-labeling/annotation-tool) app, define class names and click  on "Apply model to image":
 
 <video width="100%" preload="auto" autoplay muted loop>
     <source src="https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_class_names.mp4" type="video/mp4">
@@ -88,7 +88,7 @@ Run NN Image Labeling app, setup confidence threshold and click  on "Apply model
 
 **Apply model to images project**
 
-Run [Apply NN to Images Project](https://ecosystem.supervisely.com/apps/nn-image-labeling/project-dataset) app and select input project:
+Run [Apply NN to Images Project](../../../../supervisely-ecosystem/nn-image-labeling/project-dataset) app and select input project:
 
 ![apply_yoloe_0](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_apply_0.png)
 
