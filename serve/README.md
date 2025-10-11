@@ -1,5 +1,5 @@
 <div align="center" markdown>
-<img src="https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/poster_serve-yoloe.jpg"/>  
+<img src="https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/poster_serve-yoloe.jpg"/>  
 
 # Serve YOLOE
 
@@ -10,11 +10,11 @@
   <a href="#Acknowledgment">Acknowledgment</a>
 </p>
 
-[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervisely.com/apps/supervisely-ecosystem/YOLOE/serve)
+[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervisely.com/apps/supervisely-ecosystem/yoloe/serve)
 [![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervisely.com/slack)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/YOLOE)
-[![views](https://app.supervisely.com/img/badges/views/supervisely-ecosystem/YOLOE/serve.png)](https://supervisely.com)
-[![runs](https://app.supervisely.com/img/badges/runs/supervisely-ecosystem/YOLOE/serve.png)](https://supervisely.com)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/yoloe)
+[![views](https://app.supervisely.com/img/badges/views/supervisely-ecosystem/yoloe/serve.png)](https://supervisely.com)
+[![runs](https://app.supervisely.com/img/badges/runs/supervisely-ecosystem/yoloe/serve.png)](https://supervisely.com)
 
 </div>
 
@@ -22,7 +22,7 @@
 
 YOLOE (Real-Time Seeing Anything) is a new advancement in zero-shot, promptable YOLO models, designed for open-vocabulary detection and segmentation. Unlike previous YOLO models limited to fixed categories, YOLOE uses text, image, or internal vocabulary prompts, enabling real-time detection of any object class. Built upon YOLOv10 and inspired by YOLO-World, YOLOE achieves state-of-the-art zero-shot performance with minimal impact on speed and accuracy.
 
-![yoloe architecture](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_architecture.png)
+![yoloe architecture](https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_architecture.png)
 
 YOLOE retains the standard YOLO structure —a convolutional backbone (e.g., CSP-Darknet) for feature extraction, a neck (e.g., PAN-FPN) for multi-scale fusion, and an anchor-free, decoupled detection head (as in YOLOv8/YOLO11) predicting objectness, classes, and boxes independently. YOLOE introduces three novel modules enabling open-vocabulary detection:
 
@@ -36,11 +36,11 @@ YOLOE retains the standard YOLO structure —a convolutional backbone (e.g., CSP
 
 **Step 1.** Select pretrained model architecture and press the **Serve** button
 
-![pretrained_models](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_serve_0.png)
+![pretrained_models](https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_serve_0.png)
 
 **Step 2.** Wait for the model to deploy
 
-![deployed](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_serve_1.png)
+![deployed](https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_serve_1.png)
 
 # How To Use
 
@@ -48,69 +48,69 @@ YOLOE retains the standard YOLO structure —a convolutional backbone (e.g., CSP
 
 Select one of text/visual prompt models from the table:
 
-![visual_models](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_text_visual.png)
+![visual_models](https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_text_visual.png)
 
 Run NN Image Labeling app, open image which you want to use as reference, create reference boudning box, select it - you will see that option "Apply model to ROI" appeared and settings in corresponding fiels have changed automatically:
 
 <video width="100%" preload="auto" autoplay muted loop>
-    <source src="https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_ref_img_0.mp4" type="video/mp4">
+    <source src="https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_ref_img_0.mp4" type="video/mp4">
 </video>
 
 Now open target image and click  on "Apply model to image":
 
 <video width="100%" preload="auto" autoplay muted loop>
-    <source src="https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_ref_img_1.mp4" type="video/mp4">
+    <source src="https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_ref_img_1.mp4" type="video/mp4">
 </video>
 
 **Text prompt inference**
 
 Select one of text/visual prompt models from the table:
 
-![text_models](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_text_visual.png)
+![text_models](https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_text_visual.png)
 
 Run [NN Image Labeling](https://ecosystem.supervisely.com/apps/nn-image-labeling/annotation-tool) app, define class names and click  on "Apply model to image":
 
 <video width="100%" preload="auto" autoplay muted loop>
-    <source src="https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_class_names.mp4" type="video/mp4">
+    <source src="https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_class_names.mp4" type="video/mp4">
 </video>
 
 **Prompt-free inference**
 
 Select one of prompt-free models from the table:
 
-![prompt_free_models](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_prompt_free.png)
+![prompt_free_models](https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_prompt_free.png)
 
 Run NN Image Labeling app, setup confidence threshold and click  on "Apply model to image":
 
 <video width="100%" preload="auto" autoplay muted loop>
-    <source src="https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_prompt_free.mp4" type="video/mp4">
+    <source src="https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_prompt_free.mp4" type="video/mp4">
 </video>
 
 **Apply model to images project**
 
 Run [Apply NN to Images Project](https://ecosystem.supervisely.com/apps/nn-image-labeling/project-dataset) app and select input project:
 
-![apply_yoloe_0](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_apply_0.png)
+![apply_yoloe_0](https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_apply_0.png)
 
 Connect to deployed YOLOE model:
 
-![apply_yoloe_1](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_apply_1.png)
+![apply_yoloe_1](https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_apply_1.png)
 
 Leave "Choose classes and tags" section as default:
 
-![apply_yoloe_2](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_apply_2.png)
+![apply_yoloe_2](https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_apply_2.png)
 
 Set up inference settings:
 
-![apply_yoloe_3](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_apply_3.png)
+![apply_yoloe_3](https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_apply_3.png)
 
 Preview model performance on random image from dataset:
 
-![apply_yoloe_4](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_apply_4.png)
+![apply_yoloe_4](https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_apply_4.png)
 
 Press "Apply model to input data":
 
-![apply_yoloe_5](https://github.com/supervisely-ecosystem/YOLOE/releases/download/v0.0.1/yoloe_apply_5.png)
+![apply_yoloe_5](https://github.com/supervisely-ecosystem/yoloe/releases/download/v0.0.1/yoloe_apply_5.png)
 
 # Acknowledgment
 
