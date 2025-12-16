@@ -10,7 +10,7 @@ RUN pip3 install protobuf==3.20.1
 
 RUN apt-get install ffmpeg libgeos-dev libsm6 libxext6 libexiv2-dev libxrender-dev libboost-all-dev -y
 
-RUN python3 -m pip install supervisely==6.73.404
+RUN python3 -m pip install supervisely==6.73.486
 
 RUN pip3 install requests==2.28.2 urllib3==1.26.15
 RUN pip3 install packaging==21.3
@@ -24,4 +24,4 @@ RUN apt-get install nano
 RUN pip3 install ruamel.yaml==0.17.21
 RUN pip3 install git+https://github.com/openai/CLIP.git
 
-LABEL python_sdk_version=6.73.404
+LABEL python_sdk_version="6.73.486"
