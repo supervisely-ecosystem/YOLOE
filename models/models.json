@@ -1,46 +1,121 @@
 [
     {
-        "Model": "YOLOE-v8-S",
+        "Model": "YOLOE-26n",
         "prompt": "text/visual",
-        "params (M)": "12",
-        "AP": "27.9",
-        "FPS (T4)": "305.8",
+        "params (M)": "4.8",
         "meta": {
             "task_type": "prompt-based object detection",
-            "model_name": "YOLOE-v8-S",
+            "model_name": "YOLOE-26n",
             "model_files": {
-                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yoloe-v8s-seg.pt",
-                "yaml_config": "yoloe-v8-seg.yaml"
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yoloe-26n-seg.pt"
             }
         }
     },
     {
-        "Model": "YOLOE-v8-M",
+        "Model": "YOLOE-26s",
         "prompt": "text/visual",
-        "params (M)": "27",
-        "AP": "32.6",
-        "FPS (T4)": "156.7",
+        "params (M)": "13.1",
         "meta": {
             "task_type": "prompt-based object detection",
-            "model_name": "YOLOE-v8-M",
+            "model_name": "YOLOE-26s",
             "model_files": {
-                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yoloe-v8m-seg.pt",
-                "yaml_config": "yoloe-v8-seg.yaml"
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yoloe-26s-seg.pt"
             }
         }
     },
     {
-        "Model": "YOLOE-v8-L",
+        "Model": "YOLOE-26m",
         "prompt": "text/visual",
-        "params (M)": "45",
-        "AP": "35.9",
-        "FPS (T4)": "102.5",
+        "params (M)": "27.9",
         "meta": {
             "task_type": "prompt-based object detection",
-            "model_name": "YOLOE-v8-L",
+            "model_name": "YOLOE-26m",
             "model_files": {
-                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yoloe-v8l-seg.pt",
-                "yaml_config": "yoloe-v8-seg.yaml"
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yoloe-26m-seg.pt"
+            }
+        }
+    },
+    {
+        "Model": "YOLOE-26l",
+        "prompt": "text/visual",
+        "params (M)": "32.3",
+        "meta": {
+            "task_type": "prompt-based object detection",
+            "model_name": "YOLOE-26l",
+            "model_files": {
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yoloe-26l-seg.pt"
+            }
+        }
+    },
+    {
+        "Model": "YOLOE-26x",
+        "prompt": "text/visual",
+        "params (M)": "69.9",
+        "meta": {
+            "task_type": "prompt-based object detection",
+            "model_name": "YOLOE-26x",
+            "model_files": {
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yoloe-26x-seg.pt"
+            }
+        }
+    },
+    {
+        "Model": "YOLOE-26n-PF",
+        "prompt": "prompt-free",
+        "params (M)": "6.5",
+        "meta": {
+            "task_type": "prompt-based object detection",
+            "model_name": "YOLOE-26n-PF",
+            "model_files": {
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yoloe-26n-seg-pf.pt"
+            }
+        }
+    },
+    {
+        "Model": "YOLOE-26s-PF",
+        "prompt": "prompt-free",
+        "params (M)": "16.2",
+        "meta": {
+            "task_type": "prompt-based object detection",
+            "model_name": "YOLOE-26s-PF",
+            "model_files": {
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yoloe-26s-seg-pf.pt"
+            }
+        }
+    },
+    {
+        "Model": "YOLOE-26m-PF",
+        "prompt": "prompt-free",
+        "params (M)": "36.2",
+        "meta": {
+            "task_type": "prompt-based object detection",
+            "model_name": "YOLOE-26m-PFf",
+            "model_files": {
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yoloe-26m-seg-pf.pt"
+            }
+        }
+    },
+    {
+        "Model": "YOLOE-26l-PF",
+        "prompt": "prompt-free",
+        "params (M)": "40.6",
+        "meta": {
+            "task_type": "prompt-based object detection",
+            "model_name": "YOLOE-26l-PF",
+            "model_files": {
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yoloe-26l-seg-pf.pt"
+            }
+        }
+    },
+    {
+        "Model": "YOLOE-26x-PF",
+        "prompt": "prompt-free",
+        "params (M)": "86.3",
+        "meta": {
+            "task_type": "prompt-based object detection",
+            "model_name": "YOLOE-26x-PF",
+            "model_files": {
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yoloe-26x-seg-pf.pt"
             }
         }
     },
@@ -48,8 +123,6 @@
         "Model": "YOLOE-11-S",
         "prompt": "text/visual",
         "params (M)": "10",
-        "AP": "27.5",
-        "FPS (T4)": "301.2",
         "meta": {
             "task_type": "prompt-based object detection",
             "model_name": "YOLOE-11-S",
@@ -63,8 +136,6 @@
         "Model": "YOLOE-11-M",
         "prompt": "text/visual",
         "params (M)": "21",
-        "AP": "33.0",
-        "FPS (T4)": "168.3",
         "meta": {
             "task_type": "prompt-based object detection",
             "model_name": "YOLOE-11-M",
@@ -78,8 +149,6 @@
         "Model": "YOLOE-11-L",
         "prompt": "text/visual",
         "params (M)": "26",
-        "AP": "35.2",
-        "FPS (T4)": "130.5",
         "meta": {
             "task_type": "prompt-based object detection",
             "model_name": "YOLOE-11-L",
@@ -90,56 +159,9 @@
         }
     },
     {
-        "Model": "YOLOE-v8-S-PF",
-        "prompt": "prompt-free",
-        "params (M)": "13",
-        "AP": "21.0",
-        "FPS (T4)": "95.8",
-        "meta": {
-            "task_type": "prompt-based object detection",
-            "model_name": "YOLOE-v8-S-PF",
-            "model_files": {
-                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yoloe-v8s-seg-pf.pt",
-                "yaml_config": "yoloe-v8-seg.yaml"
-            }
-        }
-    },
-    {
-        "Model": "YOLOE-v8-M-PF",
-        "prompt": "prompt-free",
-        "params (M)": "29",
-        "AP": "24.7",
-        "FPS (T4)": "45.9",
-        "meta": {
-            "task_type": "prompt-based object detection",
-            "model_name": "YOLOE-v8-M-PF",
-            "model_files": {
-                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yoloe-v8m-seg-pf.pt",
-                "yaml_config": "yoloe-v8-seg.yaml"
-            }
-        }
-    },
-    {
-        "Model": "YOLOE-v8-L-PF",
-        "prompt": "prompt-free",
-        "params (M)": "47",
-        "AP": "27.2",
-        "FPS (T4)": "25.3",
-        "meta": {
-            "task_type": "prompt-based object detection",
-            "model_name": "YOLOE-v8-L-PF",
-            "model_files": {
-                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yoloe-v8l-seg-pf.pt",
-                "yaml_config": "yoloe-v8-seg.yaml"
-            }
-        }
-    },
-    {
         "Model": "YOLOE-11-S-PF",
         "prompt": "prompt-free",
         "params (M)": "11",
-        "AP": "20.6",
-        "FPS (T4)": "93.0",
         "meta": {
             "task_type": "prompt-based object detection",
             "model_name": "YOLOE-11-S-PF",
@@ -153,8 +175,6 @@
         "Model": "YOLOE-11-M-PF",
         "prompt": "prompt-free",
         "params (M)": "24",
-        "AP": "25.5",
-        "FPS (T4)": "42.5",
         "meta": {
             "task_type": "prompt-based object detection",
             "model_name": "YOLOE-11-M-PF",
@@ -168,14 +188,90 @@
         "Model": "YOLOE-11-L-PF",
         "prompt": "prompt-free",
         "params (M)": "29",
-        "AP": "26.3",
-        "FPS (T4)": "34.9",
         "meta": {
             "task_type": "prompt-based object detection",
             "model_name": "YOLOE-11-L-PF",
             "model_files": {
                 "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yoloe-11l-seg-pf.pt",
                 "yaml_config": "yoloe-11-seg.yaml"
+            }
+        }
+    },
+    {
+        "Model": "YOLOE-v8-S",
+        "prompt": "text/visual",
+        "params (M)": "12",
+        "meta": {
+            "task_type": "prompt-based object detection",
+            "model_name": "YOLOE-v8-S",
+            "model_files": {
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yoloe-v8s-seg.pt",
+                "yaml_config": "yoloe-v8-seg.yaml"
+            }
+        }
+    },
+    {
+        "Model": "YOLOE-v8-M",
+        "prompt": "text/visual",
+        "params (M)": "27",
+        "meta": {
+            "task_type": "prompt-based object detection",
+            "model_name": "YOLOE-v8-M",
+            "model_files": {
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yoloe-v8m-seg.pt",
+                "yaml_config": "yoloe-v8-seg.yaml"
+            }
+        }
+    },
+    {
+        "Model": "YOLOE-v8-L",
+        "prompt": "text/visual",
+        "params (M)": "45",
+        "meta": {
+            "task_type": "prompt-based object detection",
+            "model_name": "YOLOE-v8-L",
+            "model_files": {
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yoloe-v8l-seg.pt",
+                "yaml_config": "yoloe-v8-seg.yaml"
+            }
+        }
+    },
+    {
+        "Model": "YOLOE-v8-S-PF",
+        "prompt": "prompt-free",
+        "params (M)": "13",
+        "meta": {
+            "task_type": "prompt-based object detection",
+            "model_name": "YOLOE-v8-S-PF",
+            "model_files": {
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yoloe-v8s-seg-pf.pt",
+                "yaml_config": "yoloe-v8-seg.yaml"
+            }
+        }
+    },
+    {
+        "Model": "YOLOE-v8-M-PF",
+        "prompt": "prompt-free",
+        "params (M)": "29",
+        "meta": {
+            "task_type": "prompt-based object detection",
+            "model_name": "YOLOE-v8-M-PF",
+            "model_files": {
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yoloe-v8m-seg-pf.pt",
+                "yaml_config": "yoloe-v8-seg.yaml"
+            }
+        }
+    },
+    {
+        "Model": "YOLOE-v8-L-PF",
+        "prompt": "prompt-free",
+        "params (M)": "47",
+        "meta": {
+            "task_type": "prompt-based object detection",
+            "model_name": "YOLOE-v8-L-PF",
+            "model_files": {
+                "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yoloe-v8l-seg-pf.pt",
+                "yaml_config": "yoloe-v8-seg.yaml"
             }
         }
     }
